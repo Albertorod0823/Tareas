@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>OOJS: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <main>
+    <body>
+      <section class="preview">
+      
+      </section>
+      <script>
+
+        class Shape {
+          // Se vuelve a agregar el constructor
+          constructor(name, sides, sideLength) {
+            this.name = name;
+            this.sides = sides;
+            this.sideLength = sideLength;
+          }
+        }
+      
+        class Square extends Shape {
+          constructor(sideLength) {
+          // Se usa super para poder heredar las propiedades del pariente
+          super("square", 4, sideLength);
+          }
+
+          // Se crea el metodo para calcular area
+          calcArea() {
+            // Se crea la variable para el console.log
+            const area = this.sideLength ** 2;
+            // Se usa console.log
+            console.log(`El area del cuadrado es: ${area}`);
+          }
+
+          // Se usa el metodo del ejercicio previo
+          calcPerimeter() {
+          const perimeter = this.sides * this.sideLength;
+          console.log(`El perimetro del cuadrado es: ${perimeter}`);
+          }
+        }
+
+        // Se crea un cuadrado
+        let square = new Square(5);
+
+        // Se llaman los metodos
+        square.calcPerimeter(); 
+        square.calcArea();
+      </script>
+    </body>
+  </main>
+</html>
